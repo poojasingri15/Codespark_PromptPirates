@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra AI | Smart Farming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <h2>🌱 KrishiMitra</h2>
+    <p class="side-subtitle" data-i18n="tagline">AI FARMING ASSISTANT</p>
+
+    <nav>
+        <a href="#home" data-i18n="overview">▦ Overview</a>
+        <a href="#assistant" data-i18n="assistant">✦ AI Assistant</a>
+        <a href="#soil" data-i18n="soil">◈ Soil Health</a>
+        <a href="#crop" data-i18n="cropHealth">⌁ Crop Health</a>
+        <a href="#weather" data-i18n="weather">☀ Weather</a>
+        <a href="#fertilizer" data-i18n="fertilizer">♧ Fertilizer Advisory</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="profile-icon">KM</div>
+        <div>
+            <b data-i18n="dashboard">Farmer Dashboard</b>
+            <small>Karnataka, India</small>
+        </div>
+    </div>
+</aside>
+
+<main>
+    <header>
+        <button id="menuBtn" aria-label="Open menu">☰</button>
+        <span data-i18n="workspace">Workspace / Overview</span>
+
+        <select id="language" aria-label="Choose language">
+            <option value="en">English</option>
+            <option value="kn">ಕನ್ನಡ</option>
+            <option value="hi">हिन्दी</option>
+        </select>
+    </header>
+
+    <div class="content" id="home">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow" data-i18n="smartAgri">SMART AGRICULTURE · KARNATAKA</p>
+                <h1><span data-i18n="yourFarm">Your farm,</span>
+                    <span data-i18n="smarter">made smarter.</span></h1>
+                <p data-i18n="welcomeText">AI-powered agricultural guidance for better farming decisions.</p>
+            </div>
+            <span id="today"></span>
+        </section>
+
+        <section class="hero">
+            <div>
+                <p class="hero-label" data-i18n="companion">YOUR AI FARMING COMPANION</p>
+                <h2 data-i18n="heroTitle">Good decisions<br>grow better harvests.</h2>
+                <p data-i18n="heroText">Understand your soil, identify crop symptoms and get informed farming guidance.</p>
+                <a href="#assistant" class="hero-btn" data-i18n="talk">Talk to KrishiMitra →</a>
+            </div>
+            <div class="hero-art">🌾</div>
+        </section>
+
+        <div class="section-title">
+            <div>
+                <p class="eyebrow" data-i18n="tools">YOUR FARMING TOOLS</p>
+                <h2 data-i18n="whatToDo">What would you like to do?</h2>
+            </div>
+        </div>
+
+        <div class="tool-grid">
+            <a href="#assistant" class="tool-card">
+                <div class="tool-icon green">✦</div>
+                <h3 data-i18n="assistantName">AI Assistant</h3>
+                <p data-i18n="assistantDesc">Ask farming questions in your language.</p>
+            </a>
+
+            <a href="#soil" class="tool-card">
+                <div class="tool-icon yellow">◈</div>
+                <h3 data-i18n="soilName">Soil Health</h3>
+                <p data-i18n="soilDesc">Upload and analyse your soil report.</p>
+            </a>
+
+            <a href="#crop" class="tool-card">
+                <div class="tool-icon blue">⌁</div>
+                <h3 data-i18n="cropName">Crop Health</h3>
+                <p data-i18n="cropDesc">Upload crop images for symptom analysis.</p>
+            </a>
+
+            <a href="#weather" class="tool-card">
+                <div class="tool-icon purple">☀</div>
+                <h3 data-i18n="weatherName">Weather</h3>
+                <p data-i18n="weatherDesc">Check weather conditions in your district.</p>
+            </a>
+        </div>
+
+        <div class="section-title">
+            <div>
+                <p class="eyebrow" data-i18n="personalSupport">PERSONALIZED SUPPORT</p>
+                <h2 data-i18n="farmProfile">Your Farm Profile</h2>
+            </div>
+        </div>
+
+        <section class="panel">
+            <form id="farmForm" class="form-grid">
+
+                <label>
+                    <span data-i18n="district">District</span>
+                    <select id="district">
+                        <option value="Bengaluru Urban">Bengaluru Urban</option>
+                        <option value="Belagavi">Belagavi</option>
+                        <option value="Ballari">Ballari</option>
+                        <option value="Davanagere">Davanagere</option>
+                        <option value="Hassan">Hassan</option>
+                        <option value="Haveri">Haveri</option>
+                        <option value="Kodagu">Kodagu</option>
+                        <option value="Koppal">Koppal</option>
+                        <option value="Raichur">Raichur</option>
+                        <option value="Shivamogga">Shivamogga</option>
+                        <option value="Chikkamagaluru">Chikkamagaluru</option>
+                        <option value="Mysuru">Mysuru</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span data-i18n="crop">Crop</span>
+                    <select id="cropSelect">
+                        <option value="Maize" data-i18n="maize">Maize</option>
+                        <option value="Potato" data-i18n="potato">Potato</option>
+                        <option value="Coffee" data-i18n="coffee">Coffee</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span data-i18n="growthStage">Growth Stage</span>
+                    <select id="stage">
+                        <option data-i18n="beforeSowing">Before sowing</option>
+                        <option data-i18n="earlyGrowth">Early growth</option>
+                        <option data-i18n="vegetative">Vegetative stage</option>
+                        <option data-i18n="flowering">Flowering stage</option>
+                        <option data-i18n="harvest">Harvest stage</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span data-i18n="farmSize">Farm Size (acres)</span>
+                    <input type="number" id="farmSize" min="0" placeholder="e.g. 2" data-i18n-placeholder="farmPlaceholder">
+                </label>
+
+                <button type="submit" class="primary-btn" data-i18n="saveProfile">Save Farm Profile</button>
+            </form>
+            <p id="farmStatus" class="status"></p>
+        </section>
+
+        <div class="section-title" id="assistant">
+            <div>
+                <p class="eyebrow" data-i18n="intelligentSupport">INTELLIGENT FARMING SUPPORT</p>
+                <h2 data-i18n="assistantTitle">KrishiMitra AI Assistant</h2>
+            </div>
+        </div>
+
+        <section class="panel">
+            <div class="chat-header">
+                <div class="bot-icon">🌱</div>
+                <div>
+                    <h3>KrishiMitra AI</h3>
+                    <small data-i18n="multilingual">Multilingual agricultural assistant</small>
+                </div>
+                <span class="online">● <span data-i18n="online">READY</span></span>
+            </div>
+
+            <div id="chatMessages" class="chat-box">
+                <div class="bot-message" data-i18n="greeting">
+                    Namaste! I am KrishiMitra AI. Ask me about your crops, soil health, fertilizer management or farming practices.
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <button type="button" data-question="How can I improve soil health for maize?" data-i18n="suggest1">Improve soil health</button>
+                <button type="button" data-question="What should I consider before applying fertilizer?" data-i18n="suggest2">Fertilizer guidance</button>
+                <button type="button" data-question="What are common potato crop diseases?" data-i18n="suggest3">Crop diseases</button>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+                <button type="button" id="voiceBtn" title="Voice input">🎙</button>
+                <input id="question" placeholder="Ask your farming question..." data-i18n-placeholder="questionPlaceholder" required>
+                <button type="submit" id="sendBtn" class="send-btn" data-i18n="send">Send ↑</button>
+            </form>
+            <small class="note" data-i18n="expertNote">Verify important agricultural decisions with local experts.</small>
+        </section>
+
+        <div class="section-title" id="soil">
+            <div>
+                <p class="eyebrow" data-i18n="soilIntelligence">SOIL INTELLIGENCE</p>
+                <h2 data-i18n="soilTitle">Soil Health Card Analysis</h2>
+            </div>
+        </div>
+
+        <section class="panel">
+            <h3 data-i18n="uploadSoil">Upload Soil Health Card</h3>
+            <p class="description" data-i18n="soilUploadDesc">Upload your soil report for OCR-based extraction.</p>
+
+            <input type="file" id="soilFile" accept=".pdf,image/*">
+            <p id="soilFileName" class="file-name" data-i18n="noFile">No file selected</p>
+
+            <button id="soilBtn" class="primary-btn" data-i18n="analyseSoil">Analyse Soil Report</button>
+            <div id="soilResult" class="result" hidden></div>
+
+            <hr>
+
+            <h3 data-i18n="manualSoil">Enter Soil Test Values Manually</h3>
+
+            <div class="form-grid">
+                <label>Nitrogen (N)<input type="number" id="nitrogen" placeholder="N value"></label>
+                <label>Phosphorus (P)<input type="number" id="phosphorus" placeholder="P value"></label>
+                <label>Potassium (K)<input type="number" id="potassium" placeholder="K value"></label>
+                <label>Soil pH<input type="number" id="ph" min="0" max="14" step="any" placeholder="pH"></label>
+                <label>Organic Carbon (%)<input type="number" id="organicCarbon" step="any" placeholder="Organic carbon"></label>
+            </div>
+
+            <button id="saveSoil" class="primary-btn" data-i18n="saveSoil">Save Soil Values</button>
+            <p id="soilStatus" class="status"></p>
+        </section>
+
+        <div class="section-title" id="crop">
+            <div>
+                <p class="eyebrow" data-i18n="cropObservation">CROP OBSERVATION</p>
+                <h2 data-i18n="cropTitle">Crop Health Detection</h2>
+            </div>
+        </div>
+
+        <section class="panel">
+            <h3 data-i18n="uploadCrop">Upload Crop Image</h3>
+            <p class="description" data-i18n="cropUploadDesc">Upload a clear picture of the affected crop or leaf.</p>
+            <input type="file" id="cropFile" accept="image/*">
+            <img id="cropPreview" alt="Crop preview" hidden>
+            <button id="cropBtn" class="primary-btn" data-i18n="analyseCrop">Analyse Crop Image</button>
+            <div id="cropResult" class="result" hidden></div>
+            <small class="note" data-i18n="cropNote">AI image analysis provides possible symptoms, not a confirmed diagnosis.</small>
+        </section>
+
+        <div class="section-title" id="weather">
+            <div>
+                <p class="eyebrow" data-i18n="weatherAwareness">WEATHER AWARENESS</p>
+                <h2 data-i18n="weatherTitle">Local Weather Advisory</h2>
+            </div>
+            <button id="refreshWeather" class="refresh-btn" data-i18n="refresh">Refresh ↻</button>
+        </div>
+
+        <section class="weather-card">
+            <div class="weather-top">
+                <div>
+                    <small data-i18n="currentConditions">CURRENT CONDITIONS</small>
+                    <h2 id="weatherDistrict">Bengaluru Urban</h2>
+                    <p id="weatherDescription">Fetching weather...</p>
+                </div>
+                <div class="temperature">
+                    <span id="weatherIcon">☀</span>
+                    <strong id="temperature">--°C</strong>
+                </div>
+            </div>
+
+            <div class="weather-stats">
+                <div><small data-i18n="humidity">Humidity</small><b id="humidity">--%</b></div>
+                <div><small data-i18n="rainfall">Rainfall</small><b id="rainfall">-- mm</b></div>
+                <div><small data-i18n="wind">Wind Speed</small><b id="wind">-- km/h</b></div>
+            </div>
+            <p class="weather-note" data-i18n="weatherNote">Weather uses an approximate district reference location, not a farm-level sensor.</p>
+        </section>
+
+        <div class="section-title" id="fertilizer">
+            <div>
+                <p class="eyebrow" data-i18n="nutrientManagement">SUSTAINABLE NUTRIENT MANAGEMENT</p>
+                <h2 data-i18n="fertilizerTitle">Fertilizer Recommendation</h2>
+            </div>
+        </div>
+
+        <section class="panel">
+            <h3 data-i18n="personalAdvisory">Personalized Fertilizer Advisory</h3>
+            <p class="description" data-i18n="fertilizerDesc">Generate guidance using your crop, growth stage and soil test values.</p>
+            <button id="fertilizerBtn" class="primary-btn" data-i18n="generate">Generate Recommendation →</button>
+            <div id="fertilizerResult" class="result" hidden></div>
+            <small class="note" data-i18n="fertilizerNote">Exact fertilizer quantities must be based on verified Karnataka agricultural recommendations and soil test interpretation.</small>
+        </section>
+
+        <footer data-i18n="footer">🌱 KrishiMitra AI | Smart Farming for a Better Tomorrow</footer>
+    </div>
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
